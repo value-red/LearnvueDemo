@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .inner{
+            height: 150px;
+            background-color: #2C66B8;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="app">-->
+    <!--<div class="inner" @click="divHandler">-->
+        <!--<button @click.stop="btnHandler">戳他</button>-->
+        <!--&lt;!&ndash; .stop 阻止冒泡&ndash;&gt;-->
+        <!--<a href="www.baidu.com" @click.prevent="linkHandler">baidu</a>-->
+        <!--&lt;!&ndash; .prevent 阻止默认行为&ndash;&gt;-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div id="app">-->
+<!--<div class="inner" @click.capture="divHandler">-->
+<!--<button @click="btnHandler">戳他</button>-->
+<!--&lt;!&ndash; .stop 阻止冒泡&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="www.baidu.com" @click.prevent="linkHandler">baidu</a>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash; .prevent 阻止默认行为&ndash;&gt;&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+
+        },
+        methods:{
+            btnHandler(){
+                console.log('这里触发了button的click');
+            },
+            divHandler(){
+                console.log('这里触发了div的click');
+            },
+            linkHandler(){
+                console.log('这里触发了a的click');
+            }
+        }
+    })
+</script>
+</body>
+</html>

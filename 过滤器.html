@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{msg|msgFormat('小孩','傻子')}}</p>
+</div>
+</body>
+<script>
+    Vue.filter('msgFormat',function (msg,arg,arg1) {
+        // return msg.replace('我','傻子')
+        // return msg.replace(/我/g,'傻子')
+        // return msg.replace(/我/g,arg)
+        return msg.replace(arg,arg1)
+
+    })
+//过滤器
+
+
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:"曾经我也不算英雄，直到遇见了你，我才发现，太阳下的小孩，风雨里的英雄"
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>

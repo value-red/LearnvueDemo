@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/vue.js"></script>
+<body>
+<div id="app">
+    <input type="button" value="翻滚吧" @click="roll">
+    <input type="button" value="jio多嘛碟" @click="stop">
+    <h4>{{msg}}</h4>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '你这个大傻子！',
+            intervallID:null
+        },
+        methods: {
+            roll() {
+
+                // console.log(this.msg);
+                clearInterval(this.intervallID)
+              this.intervallID = setInterval( ()=> {
+                    var headstr = this.msg.substring(0, 1)
+                    var backstr = this.msg.substring(1)
+                    this. msg = backstr + headstr
+                    console.log(headstr);
+                }, 200)
+            },
+            stop() {
+                clearInterval(this.intervallID)
+            }
+        }
+    })
+</script>
+</body>
+</html>
